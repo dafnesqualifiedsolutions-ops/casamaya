@@ -130,9 +130,7 @@
 <section id="post">
   <h2><span data-es>Publica tu trabajo</span><span data-en>Post your job</span></h2>
   <p class="lead"><span data-es>Conéctate con pros hoy. Sin tarjeta requerida.</span><span data-en>Get matched with local pros today. No card required.</span></p>
-  <form class="job-form" name="job-form" method="POST" action="/" data-netlify="true" netlify netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="job-form" />
-    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+  <form class="job-form" id="job-form" name="job-form">
     <div class="form-row">
       <div class="form-group"><label><span data-es>Tu nombre *</span><span data-en>Your name *</span></label><input type="text" id="name" name="name" required /></div>
       <div class="form-group"><label><span data-es>WhatsApp / Email *</span><span data-en>WhatsApp / Email *</span></label><input type="text" id="contact" name="contact" required /></div>
@@ -216,16 +214,30 @@
     rg.appendChild(d);
   });
 
-  // Netlify Forms: native POST (no JS intercept) so submissions are stored.
+  // Casa Maya form: pre-fill a WhatsApp message (works on GitHub Pages, no backend).
   var f=document.getElementById('job-form');
-  if(f) f.addEventListener('submit', function(){
+  if(f) f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name=document.getElementById('name').value.trim();
+    var contact=document.getElementById('contact').value.trim();
+    var area=document.getElementById('area').value;
+    var category=document.getElementById('category').value;
+    var desc=document.getElementById('description').value.trim();
+    if(!name || !contact || !area || !category || !desc){
+      var s0=document.getElementById('form-status');
+      if(s0){ s0.className='form-status err'; s0.textContent='* Por favor llena todos los campos.'; }
+      return;
+    }
+    var msg='Hola Casa Maya, nuevo trabajo:%0A%0A'+
+      '*Nombre:* '+name+'%0A'+
+      '*Contacto:* '+contact+'%0A'+
+      '*Zona:* '+area+'%0A'+
+      '*Categoría:* '+category+'%0A'+
+      '*Detalle:* '+desc;
     var s=document.getElementById('form-status');
-    if(s){ s.className='form-status'; s.textContent='Enviando…'; }
+    if(s){ s.className='form-status ok'; s.textContent='✓ Abriendo WhatsApp con tu solicitud…'; }
+    window.open('https://wa.me/529983292837?text='+msg, '_blank');
   });
-  if(location.search.indexOf('success')!==-1){
-    var s2=document.getElementById('form-status');
-    if(s2){ s2.className='form-status ok'; s2.textContent='✓ ¡Gracias! Tu trabajo está publicado y los pros locales te contactarán pronto.'; }
-  }
 </script>
 </body>
 </html>
