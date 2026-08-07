@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://casamaya.netlify.app/sitemap.xml
+Sitemap: https://dafnesqualifiedsolutions-ops.github.io/casamaya/sitemap.xml
