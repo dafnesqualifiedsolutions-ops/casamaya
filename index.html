@@ -70,6 +70,13 @@
   .review{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
   .review .stars{color:var(--green);font-size:1.1rem}
   .review .who{color:var(--muted);font-size:.85rem;margin-top:8px}
+  .pros-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .pro-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px}
+  .pro-card h3{font-size:1.1rem;color:var(--green)}
+  .pro-card .trade{font-weight:600;color:var(--ink)}
+  .pro-card .area{color:var(--muted);font-size:.9rem}
+  .pro-card a.pro-link{margin-top:8px;display:inline-block;color:var(--green);font-weight:600;text-decoration:none}
+  .pro-card a.pro-link:hover{text-decoration:underline}
   .job-form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;max-width:620px}
   .form-row{display:flex;gap:14px;flex-wrap:wrap}
   .form-group{flex:1;min-width:200px;margin-bottom:14px}
@@ -125,6 +132,12 @@
   <h2><span data-es>Reseñas reales</span><span data-en>Real reviews</span></h2>
   <p class="lead"><span data-es>Cada reseña en Casa Maya la deja un propietario que contrató a un profesional por la plataforma.</span><span data-en>Every review on Casa Maya is left by a homeowner who hired a pro through the platform.</span></p>
   <div class="review-grid" id="review-grid"><!-- populated by script --></div>
+</section>
+
+<section id="pros">
+  <h2><span data-es>Nuestros profesionales</span><span data-en>Our professionals</span></h2>
+  <p class="lead"><span data-es>Artesanos y técnicos verificados de la Riviera Maya listos para trabajar.</span><span data-en>Vetted artisans and technicians across the Riviera Maya, ready to work.</span></p>
+  <div class="pros-grid" id="pros-grid"><!-- populated by script --></div>
 </section>
 
 <section id="post">
@@ -234,6 +247,22 @@
     var d=document.createElement('div'); d.className='review';
     d.innerHTML='<div class="stars">'+r.stars+'</div><p><span data-es>'+r.es+'</span><span data-en>'+r.en+'</span></p><div class="who">'+r.who+'</div>';
     rg.appendChild(d);
+  });
+
+  // Pros directory (visible on site). Add entries here to list more pros.
+  var PROS = [
+    {name:'Decoraciones Domey',trade_es:'Muebles y Tapicería',trade_en:'Furniture & Upholstery',
+     area:'Puerto Morelos',url:'https://decoracionesdomey.com/',wa:'529981195052'}
+  ];
+  var pg=document.getElementById('pros-grid');
+  PROS.forEach(function(p){
+    var d=document.createElement('div'); d.className='pro-card';
+    d.innerHTML='<h3>'+p.name+'</h3>'+
+      '<div class="trade"><span data-es>'+p.trade_es+'</span><span data-en>'+p.trade_en+'</span></div>'+
+      '<div class="area">📍 '+p.area+'</div>'+
+      '<a class="pro-link" href="'+p.url+'" target="_blank" rel="noopener">'+p.url.replace('https://','')+'</a>'+
+      ' <a class="pro-link" href="https://wa.me/'+p.wa+'">📱 WhatsApp</a>';
+    pg.appendChild(d);
   });
 
   // Casa Maya form: pre-fill a WhatsApp message (works on GitHub Pages, no backend).
