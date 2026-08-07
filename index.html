@@ -157,7 +157,29 @@
 <section id="for-pros" class="cta-pros">
   <h2><span data-es>¿Eres profesional?</span><span data-en>Are you a trade professional?</span></h2>
   <p><span data-es>Recibe leads de trabajo locales congruentes con tus habilidades. Únete gratis y paga solo cuando ganes.</span><span data-en>Get steady local job leads matched to your skills. Join free, pay only when you win work.</span></p>
-  <a class="btn-light" href="#post"><span data-es>Obtener leads</span><span data-en>Get local leads</span></a>
+  <form class="job-form" id="pro-form" name="pro-form" style="margin-top:20px">
+    <div class="form-row">
+      <div class="form-group"><label><span data-es>Tu nombre *</span><span data-en>Your name *</span></label><input type="text" id="pro-name" required /></div>
+      <div class="form-group"><label><span data-es>WhatsApp *</span><span data-en>WhatsApp *</span></label><input type="text" id="pro-wa" required /></div>
+    </div>
+    <div class="form-group"><label><span data-es>Oficio / especialidad *</span><span data-en>Trade / specialty *</span></label>
+      <select id="pro-trade" required>
+        <option value=""><span data-es>Selecciona…</span><span data-en>Select…</span></option>
+        <option>Plomería</option><option>Electricidad</option><option>Aire acondicionado</option>
+        <option>Paneles solares</option><option>Albañilería</option><option>Pintura</option>
+        <option>Carpintería</option><option>Herrería</option><option>Impermeabilización</option>
+        <option>Jardinería</option><option>Piscinas</option><option>Limpieza</option>
+      </select>
+    </div>
+    <div class="form-group"><label><span data-es>Zona donde trabajas *</span><span data-en>Area you work *</span></label>
+      <select id="pro-area" required>
+        <option value=""><span data-es>Selecciona…</span><span data-en>Select…</span></option>
+        <option>Tulum</option><option>Playa del Carmen</option><option>Puerto Morelos</option><option>Cancún</option>
+      </select>
+    </div>
+    <button type="submit" class="btn-primary"><span data-es>Quiero recibir leads</span><span data-en>I want job leads</span></button>
+    <p class="form-status" id="pro-status" role="status"></p>
+  </form>
 </section>
 
 <footer>
@@ -237,6 +259,29 @@
     var s=document.getElementById('form-status');
     if(s){ s.className='form-status ok'; s.textContent='✓ Abriendo WhatsApp con tu solicitud…'; }
     window.open('https://wa.me/529983292837?text='+msg, '_blank');
+  });
+
+  // Pro sign-up: pre-fill a WhatsApp message to Casa Maya.
+  var pf=document.getElementById('pro-form');
+  if(pf) pf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var pn=document.getElementById('pro-name').value.trim();
+    var pw=document.getElementById('pro-wa').value.trim();
+    var pt=document.getElementById('pro-trade').value;
+    var pa=document.getElementById('pro-area').value;
+    if(!pn || !pw || !pt || !pa){
+      var ps0=document.getElementById('pro-status');
+      if(ps0){ ps0.className='form-status err'; ps0.textContent='* Por favor llena todos los campos.'; }
+      return;
+    }
+    var pmsg='Hola Casa Maya, soy profesional y quiero recibir leads:%0A%0A'+
+      '*Nombre:* '+pn+'%0A'+
+      '*WhatsApp:* '+pw+'%0A'+
+      '*Oficio:* '+pt+'%0A'+
+      '*Zona:* '+pa;
+    var ps=document.getElementById('pro-status');
+    if(ps){ ps.className='form-status ok'; ps.textContent='✓ Abriendo WhatsApp para registrarte…'; }
+    window.open('https://wa.me/529983292837?text='+pmsg, '_blank');
   });
 </script>
 </body>
