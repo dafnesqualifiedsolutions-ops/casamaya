@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Casa Maya — Profesionales locales listos para tu reparación o construcción | Tulum a Cancún</title>
-<meta name="description" content="¿Algo roto o quieres construir? Casa Maya conecta tu trabajo con profesionales locales listos en Tulum, Playa del Carmen, Puerto Morelos y Cancún: plomería, electricidad, aire acondicionado, paneles solares y más. Gratis." />
-<meta name="description" lang="en" content="Something broken or need building? Casa Maya matches your job with local pros ready to go across Tulum, Playa del Carmen, Puerto Morelos and Cancún: plumbing, electrical, AC, solar and more. Free." />
+<title>ProHogar — Profesionales locales listos para tu reparación o construcción | Tulum a Cancún</title>
+<meta name="description" content="¿Algo que reparar o construir? ProHogar encuentra a los mejores profesionales locales en Tulum, Playa del Carmen, Puerto Morelos y Cancún: plomería, electricidad, aire acondicionado, paneles solares y más. Gratis." />
+<meta name="description" lang="en" content="Something broken or need building? ProHogar connects you with trusted local pros across Tulum, Playa del Carmen, Puerto Morelos and Cancún: plumbing, electrical, AC, solar and more. Free." />
 <link rel="alternate" hreflang="es" href="https://dafnesqualifiedsolutions-ops.github.io/casamaya/" />
 <link rel="alternate" hreflang="en" href="https://dafnesqualifiedsolutions-ops.github.io/casamaya/" />
 <link rel="alternate" hreflang="x-default" href="https://dafnesqualifiedsolutions-ops.github.io/casamaya/" />
@@ -13,7 +13,7 @@
 {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": "Casa Maya — Riviera Home Pros",
+  "name": "ProHogar — Riviera Home Pros",
   "description": "Directorio de profesionales del hogar verificados en la Riviera Maya (Tulum, Playa del Carmen, Puerto Morelos, Cancún): plomería, electricidad, aire acondicionado, paneles solares y más.",
   "url": "https://dafnesqualifiedsolutions-ops.github.io/casamaya/",
   "telephone": "+52 998 329 2837",
@@ -39,13 +39,17 @@
     --bg:#ffffff; --ink:#16352a; --green:#006847; /* mexican flag green */
     --green-dark:#004d37; --card:#f4f9f6; --muted:#5d6b63; --line:#dcebe4;
     --serif:'Playfair Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+    --pro-navy:#1C3F60; --hogar-terracotta:#C86D44; --bg-white:#FFFFFF;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6}
   header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);border-top:4px solid var(--green);z-index:50}
   .bar{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:10px}
-  .brand{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--green);letter-spacing:.5px;line-height:1}
-  .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:.68rem;color:var(--green-dark);letter-spacing:1.5px;text-transform:uppercase}
+  .brand-logo{display:flex;flex-direction:column;line-height:1}
+  .logo-text{font-family:var(--sans);font-weight:800;font-size:1.7rem;letter-spacing:1px}
+  .logo-text .pro{color:var(--pro-navy)}
+  .logo-text .hogar{color:var(--hogar-terracotta)}
+  .tagline{font-size:.7rem;color:var(--muted);margin-top:3px;font-weight:500}
   .lang{display:flex;gap:6px}
   .lang button{background:none;border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:.82rem;color:var(--ink);font-weight:600}
   .lang button.active{background:var(--green);color:#fff;border-color:var(--green)}
@@ -98,7 +102,10 @@
 <body>
 <header>
   <div class="bar">
-    <div class="brand">Casa Maya<small data-es>Riviera Home Pros</small><small data-en>Expertos en el hogar</small></div>
+    <div class="brand-logo">
+      <div class="logo-text"><span class="pro">PRO</span><span class="hogar">HOGAR</span></div>
+      <p class="tagline"><span data-es>Tu hogar en las mejores manos</span><span data-en>Your home in trusted hands</span></p>
+    </div>
     <div class="lang">
       <button id="btn-es" class="active" onclick="setLang('es')">🇲🇽 ES</button>
       <button id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
@@ -107,9 +114,9 @@
 </header>
 
 <section class="hero" style="border-radius:0">
-  <h1><span data-es>¿Algo roto o quieres construir?</span><span data-en>Something broken or need building?</span></h1>
-  <p><span data-es>Tenemos profesionales locales listos para trabajar hoy en Tulum, Playa del Carmen, Puerto Morelos y Cancún. Plomería, electricidad, aire acondicionado, paneles solares y más. Cuéntanos tu trabajo y te conectamos al pro indicado — gratis.</span><span data-en>We have local pros ready to go across Tulum, Playa del Carmen, Puerto Morelos and Cancún. Plumbing, electrical, AC, solar panels and more. Tell us your job and we'll match you with the right pro — free.</span></p>
-  <a class="wa-btn" href="https://wa.me/529983292837?text=Hola%20Casa%20Maya,%20quiero%20pedir%20un%20pro">📱 <span data-es>Pedir por WhatsApp</span><span data-en>Message on WhatsApp</span></a>
+  <h1><span data-es>¿Algo que reparar o construir?</span><span data-en>Something broken or need building?</span></h1>
+  <p><span data-es>Encontramos a los mejores profesionales locales en Tulum, Playa del Carmen, Puerto Morelos y Cancún. Plomería, electricidad, aire acondicionado, paneles solares y más. Cuéntanos tu proyecto y te conectamos gratis.</span><span data-en>We connect you with trusted local pros across Tulum, Playa del Carmen, Puerto Morelos, and Cancún. Plumbing, electrical, AC, solar, and more. Tell us your job and we'll match you with the right pro—free.</span></p>
+  <a class="wa-btn" href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20pedir%20un%20pro">📱 <span data-es>Pedir por WhatsApp</span><span data-en>Message on WhatsApp</span></a>
   <div class="area">📍 <span data-es>Tulum · Playa del Carmen · Puerto Morelos · Cancún</span><span data-en>Tulum · Playa del Carmen · Puerto Morelos · Cancún</span></div>
 </section>
 
@@ -130,7 +137,7 @@
 
 <section id="reviews">
   <h2><span data-es>Reseñas reales</span><span data-en>Real reviews</span></h2>
-  <p class="lead"><span data-es>Cada reseña en Casa Maya la deja un propietario que contrató a un profesional por la plataforma.</span><span data-en>Every review on Casa Maya is left by a homeowner who hired a pro through the platform.</span></p>
+  <p class="lead"><span data-es>Cada reseña en ProHogar la deja un propietario que contrató a un profesional por la plataforma.</span><span data-en>Every review on ProHogar is left by a homeowner who hired a pro through the platform.</span></p>
   <div class="review-grid" id="review-grid"><!-- populated by script --></div>
 </section>
 
@@ -196,7 +203,7 @@
 </section>
 
 <footer>
-  Casa Maya · Riviera Maya (Tulum–Cancún) &nbsp;|&nbsp; <a href="https://wa.me/529983292837">WhatsApp</a>
+  ProHogar · Riviera Maya (Tulum–Cancún) &nbsp;|&nbsp; <a href="https://wa.me/529983292837">WhatsApp</a>
 </footer>
 
 <script>
@@ -265,7 +272,7 @@
     pg.appendChild(d);
   });
 
-  // Casa Maya form: pre-fill a WhatsApp message (works on GitHub Pages, no backend).
+  // ProHogar form: pre-fill a WhatsApp message (works on GitHub Pages, no backend).
   var f=document.getElementById('job-form');
   if(f) f.addEventListener('submit', function(e){
     e.preventDefault();
@@ -279,7 +286,7 @@
       if(s0){ s0.className='form-status err'; s0.textContent='* Por favor llena todos los campos.'; }
       return;
     }
-    var msg='Hola Casa Maya, nuevo trabajo:%0A%0A'+
+    var msg='Hola ProHogar, nuevo trabajo:%0A%0A'+
       '*Nombre:* '+name+'%0A'+
       '*Contacto:* '+contact+'%0A'+
       '*Zona:* '+area+'%0A'+
@@ -290,7 +297,7 @@
     window.open('https://wa.me/529983292837?text='+msg, '_blank');
   });
 
-  // Pro sign-up: pre-fill a WhatsApp message to Casa Maya.
+  // Pro sign-up: pre-fill a WhatsApp message to ProHogar.
   var pf=document.getElementById('pro-form');
   if(pf) pf.addEventListener('submit', function(e){
     e.preventDefault();
@@ -303,7 +310,7 @@
       if(ps0){ ps0.className='form-status err'; ps0.textContent='* Por favor llena todos los campos.'; }
       return;
     }
-    var pmsg='Hola Casa Maya, soy profesional titulado/con experiencia y envío mi solicitud para recibir leads:%0A%0A'+
+    var pmsg='Hola ProHogar, soy profesional titulado/con experiencia y envío mi solicitud para recibir leads:%0A%0A'+
       '*Nombre:* '+pn+'%0A'+
       '*WhatsApp:* '+pw+'%0A'+
       '*Oficio:* '+pt+'%0A'+
