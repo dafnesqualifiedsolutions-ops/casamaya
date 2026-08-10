@@ -91,7 +91,10 @@
   .cta-pros{background:linear-gradient(135deg,var(--pro-navy),var(--pro-navy-dark));color:#fff;text-align:center;border-radius:16px;padding:40px 20px}
   .cta-pros h2{color:#fff}.cta-pros h2::after{background:#fff}
   .cta-pros .btn-light{display:inline-block;background:#fff;color:var(--pro-navy);text-decoration:none;padding:13px 28px;border-radius:30px;font-weight:700;margin-top:14px}
-  footer{background:var(--pro-navy-dark);color:#dcebe4;text-align:center;padding:30px 20px;font-size:.9rem}
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+  .work-grid figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);background:var(--card)}
+  .work-grid img{width:100%;height:200px;object-fit:cover;display:block}
+  .work-grid figcaption{padding:10px 14px;font-weight:600;color:var(--pro-navy);font-size:.95rem}
   footer a{color:#fff}
   .qr{margin:18px auto 6px;max-width:160px}
   .qr img{width:160px;height:160px;display:block;margin:0 auto;border-radius:10px;background:#fff;padding:8px}
@@ -145,6 +148,17 @@
   <h2><span data-es>Nuestros profesionales</span><span data-en>Our professionals</span></h2>
   <p class="lead"><span data-es>Artesanos y técnicos verificados de la Riviera Maya listos para trabajar.</span><span data-en>Vetted artisans and technicians across the Riviera Maya, ready to work.</span></p>
   <div class="pros-grid" id="pros-grid"><!-- populated by script --></div>
+</section>
+
+<section id="work">
+  <h2><span data-es>Nuestro trabajo</span><span data-en>Our work</span></h2>
+  <p class="lead"><span data-es>Pros verificados de la Riviera Maya en acción: electricidad, plomería, paneles solares y más.</span><span data-en>Vetted Riviera Maya pros on the job: electrical, plumbing, solar panels, and more.</span></p>
+  <div class="work-grid">
+    <figure><img src="img/electrician.jpg" alt="Electricista trabajando" /><figcaption><span data-es>Electricidad</span><span data-en>Electrical</span></figcaption></figure>
+    <figure><img src="img/plumber.jpg" alt="Plomero en trabajo" /><figcaption><span data-es>Plomería</span><span data-en>Plumbing</span></figcaption></figure>
+    <figure><img src="img/solar.jpg" alt="Instalación de paneles solares" /><figcaption><span data-es>Paneles solares</span><span data-en>Solar panels</span></figcaption></figure>
+    <figure><img src="img/ac.jpg" alt="Técnico de aire acondicionado" /><figcaption><span data-es>Aire acondicionado</span><span data-en>Air conditioning</span></figcaption></figure>
+  </div>
 </section>
 
 <section id="post">
