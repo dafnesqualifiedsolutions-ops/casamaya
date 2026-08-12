@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ofertas ProHogar — Precios exclusivos una sola vez | Riviera Maya</title>
+<meta name="description" content="Ofertas exclusivas ProHogar: precios negociados una sola vez con pros verificados de la Riviera Maya. Ahorra en piscinas, solar, A/C y más." />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff; --ink:#1a2733; --muted:#586471; --line:#e3e9ee; --card:#eef3f7;
+    --pro-navy:#1C3F60; --pro-navy-dark:#152C44; --hogar-terracotta:#C86D44; --good:#1a7f4f;
+    --serif:'Playfair Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6}
+  header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);border-top:4px solid var(--pro-navy);z-index:50}
+  .bar{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:10px}
+  .brand-logo{display:flex;align-items:center;gap:10px}
+  .brand-logo img{height:54px;width:auto}
+  .brand-logo .b-txt{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--pro-navy);line-height:1}
+  .brand-logo .b-sub{font-size:.62rem;color:var(--muted);font-weight:600;letter-spacing:.5px}
+  .lang{display:flex;gap:6px}
+  .lang button{background:none;border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:.82rem;color:var(--ink);font-weight:600}
+  .lang button.active{background:var(--pro-navy);color:#fff;border-color:var(--pro-navy)}
+  .hero{background:linear-gradient(135deg,var(--pro-navy),var(--pro-navy-dark));color:#fff;padding:54px 20px;text-align:center}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);margin-bottom:10px}
+  .hero p{max-width:640px;margin:0 auto;font-size:1.05rem;opacity:.95}
+  .hero .wa-btn{display:inline-block;background:#25d366;color:#fff;text-decoration:none;padding:13px 26px;border-radius:30px;font-weight:700;margin-top:18px;box-shadow:0 6px 18px rgba(37,211,102,.35)}
+  section{max-width:1100px;margin:0 auto;padding:48px 20px}
+  h2{font-family:var(--serif);font-weight:700;font-size:1.9rem;margin-bottom:6px;color:var(--pro-navy);position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:3px;background:var(--hogar-terracotta);border-radius:3px}
+  .lead{color:var(--muted);margin-bottom:26px;max-width:680px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .step-num{width:38px;height:38px;border-radius:50%;background:var(--pro-navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:10px}
+  /* featured offer */
+  .featured{background:linear-gradient(135deg,#fff,#f3f8fb);border:2px solid var(--hogar-terracotta);border-radius:18px;padding:28px;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+  .featured .tag{display:inline-block;background:var(--hogar-terracotta);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+  .featured h3{font-family:var(--serif);font-size:1.7rem;color:var(--pro-navy);margin-bottom:6px}
+  .featured ul{margin:10px 0 0 18px;font-size:.92rem;color:var(--ink)}
+  .featured .prices{text-align:center}
+  .featured .was{text-decoration:line-through;color:var(--muted);font-size:1.1rem}
+  .featured .now{font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--good);line-height:1.1}
+  .featured .save{font-weight:700;color:var(--hogar-terracotta);margin-top:4px}
+  .featured .book{display:inline-block;margin-top:14px;background:var(--pro-navy);color:#fff;text-decoration:none;padding:13px 26px;border-radius:30px;font-weight:700}
+  .note{font-size:.74rem;color:var(--muted);margin-top:10px}
+  /* deal grid */
+  .deal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .deal{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;transition:transform .15s,box-shadow .15s}
+  .deal:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.1)}
+  .deal .ico{font-size:2.2rem}
+  .deal h3{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin:8px 0 4px}
+  .deal p{font-size:.82rem;color:var(--muted);min-height:38px}
+  .deal a{display:inline-block;margin-top:10px;color:var(--hogar-terracotta);font-weight:700;text-decoration:none;font-size:.9rem}
+  /* provider CTA */
+  .cta-pros{background:linear-gradient(135deg,var(--pro-navy),var(--pro-navy-dark));color:#fff;text-align:center;border-radius:16px;padding:40px 20px}
+  .cta-pros h2{color:#fff}.cta-pros h2::after{background:#fff}
+  .cta-pros .btn-light{display:inline-block;background:#fff;color:var(--pro-navy);text-decoration:none;padding:13px 28px;border-radius:30px;font-weight:700;margin-top:14px}
+  .form-status{margin-top:12px;font-size:.92rem;font-weight:600}
+  .form-status.ok{color:#7CF5B0}.form-status.err{color:#ffb4a8}
+  footer{text-align:center;padding:30px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+  footer a{color:var(--pro-navy);font-weight:600}
+  @media(max-width:680px){.featured{grid-template-columns:1fr}.bar{flex-wrap:wrap}}
+  [data-es]{display:none}
+  body.lang-en [data-es]{display:none}
+  body.lang-en [data-en]{display:inline}
+  body.lang-es [data-en]{display:none}
+  body.lang-es [data-es]{display:inline}
+</style>
+</head>
+<body class="lang-es">
+<header>
+  <div class="bar">
+    <a class="brand-logo" href="index.html" style="text-decoration:none">
+      <img src="logo.png" alt="ProHogar" />
+      <span><span class="b-txt">ProHogar</span><br><span class="b-sub">RIVIERA MAYA · OFERTAS</span></span>
+    </a>
+    <div class="lang">
+      <button id="btn-es" class="active" onclick="setLang('es')">🇲🇽 ES</button>
+      <button id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="border-radius:0">
+  <h1><span data-es>Ofertas Exclusivas ProHogar</span><span data-en>Exclusive ProHogar Deals</span></h1>
+  <p><span data-es>Precios negociados una sola vez con pros verificados de Tulum a Cancún. Ahorra en piscinas, solar, A/C y más — por tiempo limitado.</span><span data-en>One-time negotiated prices with vetted pros from Tulum to Cancún. Save on pools, solar, AC and more — limited time.</span></p>
+  <a class="wa-btn" href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20ver%20las%20ofertas%20del%20mes">📱 <span data-es>Escríbenos por WhatsApp</span><span data-en>Message on WhatsApp</span></a>
+</section>
+
+<section id="how">
+  <h2><span data-es>Cómo funciona</span><span data-en>How it works</span></h2>
+  <p class="lead"><span data-es>ProHogar negocia precios especiales con empresas verificadas y te los trae gratis. Tú ahorras; ellos ganan clientes.</span><span data-en>ProHogar negotiates special prices with verified companies and brings them to you free. You save; they get customers.</span></p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3><span data-es>Precio exclusivo</span><span data-en>Exclusive price</span></h3><p><span data-es>Negociamos un precio de una sola vez con un pro verificado.</span><span data-en>We negotiate a one-time price with a vetted pro.</span></p></div>
+    <div class="step"><div class="step-num">2</div><h3><span data-es>Publicado gratis</span><span data-en>Published free</span></h3><p><span data-es>Lo mostramos aquí por tiempo limitado, sin costo para ti.</span><span data-en>We feature it here for a limited time, at no cost to you.</span></p></div>
+    <div class="step"><div class="step-num">3</div><h3><span data-es>Reservas y ahorras</span><span data-en>You book &amp; save</span></h3><p><span data-es> aparta tu precio y el pro confirma la instalación.</span><span data-en>Lock the price and the pro confirms install.</span></p></div>
+  </div>
+</section>
+
+<section id="featured" style="background:var(--card)">
+  <h2><span data-es>Oferta destacada del mes</span><span data-en>Featured deal of the month</span></h2>
+  <p class="lead"><span data-es>Editado por ti cuando un socio confirme. Ejemplo abajo (plantilla).</span><span data-en>You edit this once a partner confirms. Example template below.</span></p>
+  <div class="featured">
+    <div>
+      <span class="tag"><span data-es>LANZAMIENTO · UNA SOLA VEZ</span><span data-en>LAUNCH · ONE-TIME</span></span>
+      <h3><span data-es>ProHogar 1-Day Decked Plunge</span><span data-en>ProHogar 1-Day Decked Plunge</span></h3>
+      <p><span data-es>Piscina modular entregada y armada en 1 día. Sin excavación.</span><span data-en>Modular pool delivered &amp; built in 1 day. No digging.</span></p>
+      <ul>
+        <li><span data-es>Shell de fibra + deck WPC</span><span data-en>Fiberglass shell + WPC deck</span></li>
+        <li><span data-es>3 estilos listos</span><span data-en>3 ready-made styles</span></li>
+        <li><span data-es>Listo para solar</span><span data-en>Solar-ready</span></li>
+      </ul>
+      <p class="note"><span data-es>⚠ Plantilla: reemplaza con el precio real del socio antes de publicar.</span><span data-en>⚠ Template: replace with the real partner price before publishing.</span></p>
+    </div>
+    <div class="prices">
+      <div class="was">$130,000</div>
+      <div class="now">$115,000</div>
+      <div class="save"><span data-es>Ahorras $15,000</span><span data-en>Save $15,000</span></div>
+      <a class="book" href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20la%20Oferta%20Lanzamiento%20Plunge%20$115,000">📩 <span data-es>Reservar precio</span><span data-en>Lock price</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="deals">
+  <h2><span data-es>Ofertas por categoría</span><span data-en>Deals by category</span></h2>
+  <p class="lead"><span data-es>Pide tu precio especial por WhatsApp. Negociamos por ti.</span><span data-en>Request your special price on WhatsApp. We negotiate for you.</span></p>
+  <div class="deal-grid">
+    <div class="deal"><div class="ico">❄️</div><h3><span data-es>Aire acondicionado</span><span data-en>Air conditioning</span></h3><p><span data-es>Instalación y mantenimiento con precio negociado.</span><span data-en>Install &amp; maintenance at a negotiated rate.</span></p><a href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20precio%20especial%20de%20A/C">→ <span data-es>Ver oferta</span><span data-en>See deal</span></a></div>
+    <div class="deal"><div class="ico">🔌</div><h3><span data-es>Electricidad</span><span data-en>Electrical</span></h3><p><span data-es>Proyectos certificados CFE.</span><span data-en>CFE-certified projects.</span></p><a href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20precio%20especial%20de%20electricidad">→ <span data-es>Ver oferta</span><span data-en>See deal</span></a></div>
+    <div class="deal"><div class="ico">☀️</div><h3><span data-es>Paneles solares</span><span data-en>Solar panels</span></h3><p><span data-es>Respaldo de batería incluido.</span><span data-en>Battery backup included.</span></p><a href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20precio%20especial%20de%20solar">→ <span data-es>Ver oferta</span><span data-en>See deal</span></a></div>
+    <div class="deal"><div class="ico">🪣</div><h3><span data-es>Plomería</span><span data-en>Plumbing</span></h3><p><span data-es>Reparación y nueva instalación.</span><span data-en>Repair &amp; new install.</span></p><a href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20precio%20especial%20de%20plomer%C3%ADa">→ <span data-es>Ver oferta</span><span data-en>See deal</span></a></div>
+    <div class="deal"><div class="ico">🏊</div><h3><span data-es>Piscinas</span><span data-en>Pools</span></h3><p><span data-es>Mantenimiento y nuevas instalaciones.</span><span data-en>Maintenance &amp; new builds.</span></p><a href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20precio%20especial%20de%20piscinas">→ <span data-es>Ver oferta</span><span data-en>See deal</span></a></div>
+    <div class="deal"><div class="ico">🔋</div><h3><span data-es>Carga EV</span><span data-en>EV charger</span></h3><p><span data-es>Instalación rápida sin excavación.</span><span data-en>Quick no-dig install.</span></p><a href="https://wa.me/529983292837?text=Hola%20ProHogar,%20quiero%20precio%20especial%20de%20cargador%20EV">→ <span data-es>Ver oferta</span><span data-en>See deal</span></a></div>
+  </div>
+</section>
+
+<section id="provider" class="cta-pros">
+  <h2><span data-es>¿Eres proveedor? Consigue clientes gratis</span><span data-en>Are you a provider? Get free customers</span></h2>
+  <p><span data-es>ProHogar promociona tu producto o servicio gratis como "Oferta Exclusiva una sola vez". Solo danos tu precio normal — nosotros creamos el especial y traemos los clientes.</span><span data-en>ProHogar promotes your product or service free as a "one-time Exclusive Offer." Just give us your normal price — we build the special and bring the customers.</span></p>
+  <a class="btn-light" href="https://wa.me/529983292837?text=Hola%20ProHogar,%20soy%20proveedor.%20Quiero%20que%20promocionen%20mi%20producto%20gratis.%20Mi%20precio%20normal%20es:">📩 <span data-es>Quiero ser oferta</span><span data-en>I want to be a deal</span></a>
+</section>
+
+<footer>
+  ProHogar · Riviera Maya (Tulum–Cancún) &nbsp;|&nbsp; <a href="https://wa.me/529983292837">WhatsApp</a> &nbsp;|&nbsp; <a href="index.html">Inicio</a>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className='lang-'+l;
+    document.getElementById('btn-es').classList.toggle('active',l==='es');
+    document.getElementById('btn-en').classList.toggle('active',l==='en');
+    try{localStorage.setItem('ph_ofertas_lang',l);}catch(e){}
+  }
+  (function(){var l='es';try{l=localStorage.getItem('ph_ofertas_lang')||'es';}catch(e){}setLang(l);})();
+</script>
+</body>
+</html>
