@@ -281,9 +281,11 @@
   });
 
   // Pros directory (visible on site). Add entries here to list more pros.
+  // WhatsApp goes to ProHogar intake (your number), pre-filled with the pro's name,
+  // so we handle the lead before handing off. Never hardcode a provider's direct WA here.
   var PROS = [
     {name:'Decoraciones Domey',trade_es:'Muebles y Tapicería',trade_en:'Furniture & Upholstery',
-     area:'Puerto Morelos',url:'https://decoracionesdomey.com',wa:'529981195052'}
+     area:'Puerto Morelos',url:'https://decoracionesdomey.com',waMsg:'Hola ProHogar, quiero una cotización con Decoraciones Domey (muebles y tapicería)'}
   ];
   var pg=document.getElementById('pros-grid');
   PROS.forEach(function(p){
@@ -292,7 +294,7 @@
       '<div class="trade"><span data-es>'+p.trade_es+'</span><span data-en>'+p.trade_en+'</span></div>'+
       '<div class="area">📍 '+p.area+'</div>'+
       '<a class="pro-link" href="'+p.url+'" target="_blank" rel="noopener">'+p.url.replace('https://','')+'</a>'+
-      ' <a class="pro-link" href="https://wa.me/'+p.wa+'">📱 WhatsApp</a>';
+      ' <a class="pro-link" href="https://wa.me/529983292837?text='+encodeURIComponent(p.waMsg)+'">📱 WhatsApp</a>';
     pg.appendChild(d);
   });
 
