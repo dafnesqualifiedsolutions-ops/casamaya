@@ -50,7 +50,7 @@
   .lang{position:absolute;right:16px;top:14px;display:flex;gap:6px}
   .lang button{background:none;border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:.82rem;color:var(--ink);font-weight:600}
   .lang button.active{background:var(--pro-navy);color:#fff;border-color:var(--pro-navy)}
-  .lang .deals-btn{background:var(--hogar-terracotta);color:#fff;border:1px solid var(--hogar-terracotta);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:.82rem;font-weight:700;text-decoration:none;animation:pulse 1.8s infinite}
+  .lang .deals-btn{background:var(--hogar-terracotta);color:#fff;border:1px solid var(--hogar-terracotta);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:.82rem;font-weight:700;text-decoration:none;animation:pulse 1.8s infinite;display:inline-block}
   .lang .deals-btn:hover{filter:brightness(1.08)}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(200,109,68,.6)}70%{box-shadow:0 0 0 8px rgba(200,109,68,0)}100%{box-shadow:0 0 0 0 rgba(200,109,68,0)}}
   .hero{position:relative;color:#fff;padding:64px 20px;text-align:center;background:linear-gradient(135deg,var(--pro-navy),var(--pro-navy-dark))}
@@ -103,7 +103,7 @@
   .qr{margin:18px auto 6px;max-width:160px}
   .qr img{width:160px;height:160px;display:block;margin:0 auto;border-radius:10px;background:#fff;padding:8px}
   .qr-cap{font-size:.8rem;color:#dcebe4;margin-top:8px}
-  @media(max-width:560px){.brand{font-size:1.35rem}.hero{padding:48px 16px}}
+  @media(max-width:560px){.brand{font-size:1.35rem}.hero{padding:48px 16px}.brand-logo img.brand-img{height:92px}.bar{position:relative;min-height:120px}.lang{top:64px;right:50%;transform:translateX(50%);flex-direction:column;align-items:center}.lang .deals-btn{margin-top:4px}}
 </style>
 </head>
 <body>
@@ -114,9 +114,9 @@
       <p class="tagline"><span data-es>Tu hogar en las mejores manos</span><span data-en>Your home in trusted hands</span></p>
     </div>
     <div class="lang">
-      <a class="deals-btn" href="ofertas.html">🔥 <span data-es>OFERTAS</span><span data-en>DEALS</span></a>
       <button id="btn-es" class="active" onclick="setLang('es')">🇲🇽 ES</button>
       <button id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
+      <a class="deals-btn" href="ofertas.html">🔥 <span data-es>OFERTAS</span><span data-en>DEALS</span></a>
     </div>
   </div>
 </header>
