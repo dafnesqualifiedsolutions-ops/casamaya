@@ -105,7 +105,13 @@
   .qr{margin:18px auto 6px;max-width:160px}
   .qr img{width:160px;height:160px;display:block;margin:0 auto;border-radius:10px;background:#fff;padding:8px}
   .qr-cap{font-size:.8rem;color:#dcebe4;margin-top:8px}
-  @media(max-width:560px){.brand{font-size:1.35rem}.hero{padding:48px 16px}.brand-logo img.brand-img{height:92px}.bar{position:relative;min-height:120px}.lang{top:64px;right:50%;transform:translateX(50%);flex-direction:column;align-items:center}.lang .deals-btn{margin-top:4px}}
+  @media(max-width:560px){
+    .brand{font-size:1.35rem}.hero{padding:48px 16px}.brand-logo img.brand-img{height:92px}
+    .bar{justify-content:space-between;padding:12px 20px;flex-wrap:wrap}
+    .brand-logo{flex:1 1 100%;margin-bottom:8px}
+    .lang{position:static;transform:none;flex-direction:row;align-items:center;margin:0 auto}
+    .lang .deals-btn{margin-top:0}
+  }
 </style>
 </head>
 <body>
@@ -245,24 +251,24 @@
   (function(){ var s='es'; try{ s=localStorage.getItem('prohogar_lang')||'es'; }catch(e){} setLang(s); })();
 
   var CATS = [
-    {es:'Plomería',en:'Plumbing',img:'cat-plumbing.jpg'},
-    {es:'Electricidad',en:'Electrical',img:'cat-electrical.jpg'},
-    {es:'Aire acondicionado',en:'Air conditioning',img:'cat-ac.jpg'},
-    {es:'Paneles solares',en:'Solar panels',img:'cat-solar.jpg'},
-    {es:'Albañilería',en:'Masonry',img:'cat-masonry.jpg'},
-    {es:'Pintura',en:'Painting',img:'cat-painting.jpg'},
-    {es:'Carpintería',en:'Carpentry',img:'cat-carpentry.jpg'},
-    {es:'Herrería',en:'Metalwork',img:'cat-metalwork.jpg'},
-    {es:'Impermeabilización',en:'Waterproofing',img:'cat-waterproofing.jpg'},
-    {es:'Jardinería',en:'Gardening',img:'cat-gardening.jpg'},
-    {es:'Piscinas',en:'Pools',img:'cat-pools.jpg'},
-    {es:'Limpieza',en:'Cleaning',img:'cat-cleaning.jpg'}
+    {es:'Plomería',en:'Plumbing',img:'cat-plumbing.jpg',icon:'🚰'},
+    {es:'Electricidad',en:'Electrical',img:'cat-electrical.jpg',icon:'⚡'},
+    {es:'Aire acondicionado',en:'Air conditioning',img:'cat-ac.jpg',icon:'❄️'},
+    {es:'Paneles solares',en:'Solar panels',img:'cat-solar.jpg',icon:'☀️'},
+    {es:'Albañilería',en:'Masonry',img:'cat-masonry.jpg',icon:'🧱'},
+    {es:'Pintura',en:'Painting',img:'cat-painting.jpg',icon:'🎨'},
+    {es:'Carpintería',en:'Carpentry',img:'cat-carpentry.jpg',icon:'🪚'},
+    {es:'Herrería',en:'Metalwork',img:'cat-metalwork.jpg',icon:'🔩'},
+    {es:'Impermeabilización',en:'Waterproofing',img:'cat-waterproofing.jpg',icon:'💧'},
+    {es:'Jardinería',en:'Gardening',img:'cat-gardening.jpg',icon:'🌿'},
+    {es:'Piscinas',en:'Pools',img:'cat-pools.jpg',icon:'🏊'},
+    {es:'Limpieza',en:'Cleaning',img:'cat-cleaning.jpg',icon:'🧽'}
   ];
   var cg = document.getElementById('cat-grid');
   var catSel = document.getElementById('category');
   CATS.forEach(function(c){
     var d=document.createElement('div'); d.className='cat';
-    d.innerHTML='<div class="thumb-wrap"><img class="thumb" src="img/'+c.img+'" alt="'+c.en+'" loading="lazy" /><span class="cat-badge">✓ Pro</span></div><h3><span data-es>'+c.es+'</span><span data-en>'+c.en+'</span></h3>';
+    d.innerHTML='<div class="thumb-wrap"><img class="thumb" src="img/'+c.img+'" alt="'+c.en+'" loading="lazy" /><span class="cat-badge">'+c.icon+'</span></div><h3><span data-es>'+c.es+'</span><span data-en>'+c.en+'</span></h3>';
     cg.appendChild(d);
     var o=document.createElement('option'); o.value=c.es;
     o.innerHTML='<span data-es>'+c.es+'</span><span data-en>'+c.en+'</span>';
